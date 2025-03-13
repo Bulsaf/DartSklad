@@ -1,0 +1,12 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="150"
+             x:Class="DartSklad.StorageCardControl"
+			 Background="Black">
+	<StackPanel Orientation="Vertical">
+		<TextBlock Margin="10" FontSize="16" Foreground="White" Text="Название" TextWrapping="Wrap"/>
+		<TextBlock Margin="10 30" FontSize="14" Foreground="LightGray" Text="uashdbsajb121b3" TextWrapping="Wrap"/>
+	</StackPanel>
+</UserControl>
