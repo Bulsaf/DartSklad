@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" MinHeight="250" MinWidth="600" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DartSklad.MainWindow"
+        Title="DartSklad"
+		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
+		>
+	<Window.Styles>
+		<Style Selector="TextBox">
+			<Setter Property="Width" Value="300"/>
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="Height" Value="25"/>
+			<Setter Property="Margin" Value="10 0"/>
+		</Style>
+
+		<Style Selector="TextBlock">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="Margin" Value="10 0"/>
+		</Style>
+		<Style Selector="local|ProjectsPanelControl">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Margin" Value="10"/>
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="Width" Value="200"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="BorderThickness" Value="2"/>
+		</Style>
+		<Style Selector="Button">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="BorderThickness" Value="3"/>
+			<Setter Property="Margin" Value="10 0"/>
+		</Style>
+		
+	</Window.Styles>
+
+	<DockPanel>
+		<Label FontSize="18" DockPanel.Dock="Top" Margin="20" Content="Здравствуйте, Дамир Ренатович"/>
+		<StackPanel Orientation="Horizontal" Margin="10" DockPanel.Dock="Top">
+			<Label Margin="20 0" Content="Все проекты" FontSize="18"/>
+			<Button Content="Создать проект"/>
+			<Button Content="Все объекты" Click="AllObjectsButton_Click"/>
+		</StackPanel>
+		<ScrollViewer>
+			<WrapPanel DockPanel.Dock="Top" Margin="20">
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+				<local:ProjectsPanelControl/>
+			</WrapPanel>
+		</ScrollViewer>
+	</DockPanel>
+</Window>
