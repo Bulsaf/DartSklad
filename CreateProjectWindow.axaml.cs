@@ -4,24 +4,22 @@ using Avalonia.Markup.Xaml;
 
 namespace DartSklad;
 
-public partial class StorageObjectsWindow : Window
+public partial class CreateProjectWindow : Window
 {
-    public StorageObjectsWindow()
+    public CreateProjectWindow()
     {
         InitializeComponent();
     }
 
     private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var addObjectWindow = new AddObjectToStorageWindow();
-        addObjectWindow.Show();
-        this.Close();
+        
     }
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var eventWindow = new EventInfoWindow();
-        eventWindow.Show();
+        var mainWindow = new MainWindow();
+        mainWindow.Show();
         this.Close();
     }
 }

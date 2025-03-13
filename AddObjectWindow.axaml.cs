@@ -18,6 +18,8 @@ public partial class AddObjectWindow : Window
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        var addObjWindow = new AllObjectsWindow();
+        addObjWindow.Show();
         this.Close();
     }
 }

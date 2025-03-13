@@ -12,7 +12,15 @@ namespace DartSklad
         private void AllObjectsButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var allObjWindow = new AllObjectsWindow();
-            allObjWindow.ShowDialog(this);
+            allObjWindow.Show();
+            this.Close();
+        }
+
+        private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var createProjectWindow = new CreateProjectWindow();
+            createProjectWindow.Show();
+            this.Close();
         }
     }
 }

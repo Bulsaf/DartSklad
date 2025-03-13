@@ -15,11 +15,14 @@ public partial class AllObjectsWindow : Window
     private void CreateObjectButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         var addObjWindow = new AddObjectWindow();       
-        addObjWindow.ShowDialog(this);
+        addObjWindow.Show();
+        this.Close();
     }
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        var addObjWindow = new MainWindow();
+        addObjWindow.Show();
         this.Close();
     }
 }

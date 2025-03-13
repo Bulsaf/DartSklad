@@ -57,8 +57,8 @@
 			</StackPanel>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<Button Content="Создать мероприятие"/>
-			<Button Content="Назад"/>
+			<Button Content="Создать мероприятие" Click="AddButton_Click"/>
+			<Button Content="Назад" Click="BackButton_Click"/>
 		</StackPanel>
 		<Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top" Content="Мероприятия"/>
 		<ScrollViewer>

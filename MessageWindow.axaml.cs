@@ -6,6 +6,11 @@ namespace DartSklad;
 
 public partial class MessageWindow : Window
 {
+    public MessageWindow()
+    {
+        InitializeComponent();
+    }
+
     public MessageWindow(string text)
     {
         InitializeComponent();
