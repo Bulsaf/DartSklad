@@ -39,8 +39,8 @@
 			</StackPanel>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<Button Content="Добавить объект"/>
-			<Button Content="Назад"/>
+			<Button Content="Добавить объект" Click="AddButton_Click"/>
+			<Button Content="Назад" Click="BackButton_Click"/>
 		</StackPanel>
 		<Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top" Content="Объекты"/>
 		<ScrollViewer>

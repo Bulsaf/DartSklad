@@ -2,10 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="130"
+             mc:Ignorable="d" Width="220" d:DesignWidth="220" d:DesignHeight="150"
              x:Class="DartSklad.ProjectsPanelControl"
 			 Background="Black"
 			 >
+	<UserControl.Styles>
+		<Style Selector="Button.uc">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="CornerRadius" Value="10"/>
+		</Style>
+	</UserControl.Styles>
 	<StackPanel Orientation="Vertical">
 		<TextBlock Margin="10" FontSize="16" Foreground="White" Text="Название" TextWrapping="Wrap"/>
 		<TextBlock Margin="10 30" FontSize="14" Foreground="LightGray" Text="24.06.2024-25.06.2025" TextWrapping="Wrap"/>

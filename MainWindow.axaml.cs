@@ -22,5 +22,12 @@ namespace DartSklad
             createProjectWindow.Show();
             this.Close();
         }
+
+        private void CardButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var createProjectWindow = new ProjectInfoWindow();
+            createProjectWindow.Show();
+            this.Close();
+        }
     }
 }

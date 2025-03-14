@@ -20,15 +20,15 @@
 			<Setter Property="FontSize" Value="18"/>
 			<Setter Property="Margin" Value="10 0"/>
 		</Style>
+		
 		<Style Selector="local|ProjectsPanelControl">
 			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Margin" Value="10"/>
 			<Setter Property="CornerRadius" Value="10"/>
-			<Setter Property="Width" Value="200"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="2"/>
+			<Setter Property="Width" Value="220"/>
+			
 		</Style>
-		<Style Selector="Button">
+
+		<Style Selector="Button.main">
 			<Setter Property="VerticalAlignment" Value="Center"/>
 			<Setter Property="Background" Value="Black"/>
 			<Setter Property="Foreground" Value="White"/>
@@ -37,25 +37,46 @@
 			<Setter Property="BorderThickness" Value="3"/>
 			<Setter Property="Margin" Value="10 0"/>
 		</Style>
-		
+
+		<Style Selector="Button.uc">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="Margin" Value="10"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="BorderThickness" Value="3"/>
+		</Style>
 	</Window.Styles>
 
 	<DockPanel>
 		<Label FontSize="18" DockPanel.Dock="Top" Margin="20" Content="Здравствуйте, Дамир Ренатович"/>
 		<StackPanel Orientation="Horizontal" Margin="10" DockPanel.Dock="Top">
 			<Label Margin="20 0" Content="Все проекты" FontSize="18"/>
-			<Button Content="Создать проект" Click="AddButton_Click"/>
-			<Button Content="Все объекты" Click="AllObjectsButton_Click"/>
+			<Button Classes="main" Content="Создать проект" Click="AddButton_Click"/>
+			<Button Classes="main" Content="Все объекты" Click="AllObjectsButton_Click"/>
 		</StackPanel>
 		<ScrollViewer>
 			<WrapPanel DockPanel.Dock="Top" Margin="20">
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
-				<local:ProjectsPanelControl/>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:ProjectsPanelControl/>
+				</Button>
 			</WrapPanel>
 		</ScrollViewer>
 	</DockPanel>

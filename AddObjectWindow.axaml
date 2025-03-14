@@ -47,11 +47,13 @@
 				<TextBlock Text="Название"/>
 				<TextBlock Text="Серийный номер"/>
 				<TextBlock Text="Тип"/>
+				<TextBlock Text="Цена"/>
 			</StackPanel>
 			<StackPanel Grid.Column="1" Margin="10" DockPanel.Dock="Top">
 				<TextBox/>
 				<TextBox/>
 				<ComboBox HorizontalAlignment="Center"/>
+				<TextBox Text="0"/>
 			</StackPanel>
 		</Grid>
 		

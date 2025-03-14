@@ -22,11 +22,9 @@
 		</Style>
 		<Style Selector="local|EventCardControl">
 			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Margin" Value="10"/>
+			
 			<Setter Property="CornerRadius" Value="10"/>
 			<Setter Property="Width" Value="200"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="2"/>
 		</Style>
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center"/>
@@ -38,6 +36,16 @@
 			<Setter Property="Margin" Value="10 0"/>
 		</Style>
 
+		<Style Selector="Button.uc">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="Margin" Value="10"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="BorderThickness" Value="3"/>
+		</Style>
 	</Window.Styles>
 
 	<DockPanel>
@@ -63,15 +71,24 @@
 		<Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top" Content="Мероприятия"/>
 		<ScrollViewer>
 			<WrapPanel DockPanel.Dock="Top" Margin="20">
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
-				<local:EventCardControl/>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
+				<Button Classes="uc" Click="CardButton_Click">
+					<local:EventCardControl/>
+				</Button>
 			</WrapPanel>
 		</ScrollViewer>
 	</DockPanel>

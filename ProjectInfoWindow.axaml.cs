@@ -24,4 +24,11 @@ public partial class ProjectInfoWindow : Window
         mainWindow.Show();
         this.Close();
     }
+
+    private void CardButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var createProjectWindow = new EventInfoWindow();
+        createProjectWindow.Show();
+        this.Close();
+    }
 }
