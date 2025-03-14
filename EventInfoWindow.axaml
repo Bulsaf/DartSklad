@@ -6,6 +6,8 @@
         x:Class="DartSklad.EventInfoWindow"
         Title="EventInfoWindow"
 		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
+		Background="#181818"
+		Foreground="White"
 		>
 	<Window.Styles>
 		<Style Selector="TextBox">

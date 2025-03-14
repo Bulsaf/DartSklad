@@ -5,7 +5,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DartSklad.AddObjectToStorageWindow"
         Title="AddObjectToStorageWindow" 
-		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad">
+		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
+		Background="#181818"
+		Foreground="White">
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="300"/>
@@ -21,11 +23,10 @@
 		</Style>
 		<Style Selector="local|AllObjectsPanelControl">
 			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Margin" Value="10"/>
+			
 			<Setter Property="CornerRadius" Value="10"/>
 			<Setter Property="Width" Value="250"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="2"/>
+			
 		</Style>
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center"/>
@@ -37,6 +38,16 @@
 			<Setter Property="Margin" Value="10 0"/>
 		</Style>
 
+		<Style Selector="ToggleButton">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="BorderThickness" Value="3"/>
+			<Setter Property="Margin" Value="10"/>
+		</Style>
+
 	</Window.Styles>
 
 	<DockPanel>
@@ -46,14 +57,24 @@
 		</StackPanel>
 		<ScrollViewer>
 			<WrapPanel DockPanel.Dock="Top" Margin="20">
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
+				<ToggleButton>
+					<local:AllObjectsPanelControl/>
+				</ToggleButton>
 			</WrapPanel>
 		</ScrollViewer>
 	</DockPanel>

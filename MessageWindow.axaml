@@ -4,6 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Width="200" Height="150" d:DesignWidth="200" d:DesignHeight="150"
         x:Class="DartSklad.MessageWindow"
-        Title="MessageWindow">
+        Title="MessageWindow"
+		Background="#181818"
+		Foreground="White">
   <TextBlock x:Name="textblock" HorizontalAlignment="Center" TextAlignment="Start" VerticalAlignment="Center" TextWrapping="Wrap" Text=""/>
 </Window>

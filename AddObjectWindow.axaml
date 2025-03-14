@@ -5,7 +5,9 @@
         mc:Ignorable="d" Width="450" Height="350" d:DesignWidth="450" d:DesignHeight="350"
         x:Class="DartSklad.AddObjectWindow"
 		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
-        Title="AddObjectWindow">
+        Title="AddObjectWindow"
+		Background="#181818"
+		Foreground="White">
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="200"/>

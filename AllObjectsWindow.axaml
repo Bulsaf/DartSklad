@@ -6,7 +6,9 @@
         x:Class="DartSklad.AllObjectsWindow"
         Title="AllObjectsWindow"
 		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
-	>
+		Background="#181818"
+		Foreground="White"
+		>
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="300"/>

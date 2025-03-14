@@ -6,6 +6,8 @@
         x:Class="DartSklad.MainWindow"
         Title="DartSklad"
 		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
+		Background="#181818"
+		Foreground="White"
 		>
 	<Window.Styles>
 		<Style Selector="TextBox">
@@ -51,7 +53,7 @@
 	</Window.Styles>
 
 	<DockPanel>
-		<Label FontSize="18" DockPanel.Dock="Top" Margin="20" Content="Здравствуйте, Дамир Ренатович"/>
+		<Label FontSize="18" DockPanel.Dock="Top" Margin="20" FontWeight="Bold" Content="Здравствуйте, Дамир Ренатович"/>
 		<StackPanel Orientation="Horizontal" Margin="10" DockPanel.Dock="Top">
 			<Label Margin="20 0" Content="Все проекты" FontSize="18"/>
 			<Button Classes="main" Content="Создать проект" Click="AddButton_Click"/>
