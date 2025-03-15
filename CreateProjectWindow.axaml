@@ -25,7 +25,7 @@
 			<Setter Property="HorizontalAlignment" Value="Center" />
 		</Style>
 
-		<Style Selector="TextBlock">
+		<Style Selector="TextBlock.tb">
 			<Setter Property="FontSize" Value="18" />
 			<Setter Property="Margin" Value="15" />
 		</Style>
@@ -55,10 +55,10 @@
 				Grid.Column="0"
 				Margin="10"
 				DockPanel.Dock="Top">
-				<TextBlock Text="Название" />
-				<TextBlock Text="Дата въезда" />
-				<TextBlock Text="Дата начала" />
-				<TextBlock Text="Дата конца" />
+				<TextBlock Classes="tb" Text="Название" />
+				<TextBlock Classes="tb" Text="Дата въезда" />
+				<TextBlock Classes="tb" Text="Дата начала" />
+				<TextBlock Classes="tb" Text="Дата конца" />
 			</StackPanel>
 			<StackPanel
 				Grid.Column="1"

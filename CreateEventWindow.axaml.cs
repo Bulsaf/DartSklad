@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -6,7 +7,7 @@ namespace DartSklad;
 
 public partial class CreateEventWindow : Window
 {
-    public CreateEventWindow()
+    public CreateEventWindow( Guid parentId)
     {
         InitializeComponent();
     }

@@ -60,7 +60,7 @@ public List<Event> GetEventsByProjectId(Guid projectId)
 
     private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var addWindow = new CreateEventWindow();
+        var addWindow = new CreateEventWindow(projectId);
         addWindow.Show();
         this.Close();
     }
