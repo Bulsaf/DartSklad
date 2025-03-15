@@ -18,8 +18,8 @@ public partial class CreateEventWindow : Window
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var mainWindow = new ProjectInfoWindow();
-        mainWindow.Show();
+        // var mainWindow = new ProjectInfoWindow();
+        // mainWindow.Show();
         this.Close();
     }
 }

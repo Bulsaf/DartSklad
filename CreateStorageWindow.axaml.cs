@@ -17,8 +17,8 @@ public partial class CreateStorageWindow : Window
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var eventWindow = new EventInfoWindow();
-        eventWindow.Show();
+        // var eventWindow = new EventInfoWindow();
+        // eventWindow.Show();
         this.Close();
     }
 }

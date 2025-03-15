@@ -1,94 +1,113 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="DartSklad.EventInfoWindow"
-        Title="EventInfoWindow"
-		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
-		Background="#181818"
-		Foreground="White"
-		>
+<Window
+	x:Class="DartSklad.EventInfoWindow"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:DartSklad"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="EventInfoWindow"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	Background="#181818"
+	Foreground="White"
+	mc:Ignorable="d">
 	<Window.Styles>
 		<Style Selector="TextBox">
-			<Setter Property="Width" Value="300"/>
-			<Setter Property="FontSize" Value="18"/>
-			<Setter Property="Height" Value="25"/>
-			<Setter Property="Margin" Value="10 0"/>
+			<Setter Property="Width" Value="300" />
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="Height" Value="25" />
+			<Setter Property="Margin" Value="10 0" />
 		</Style>
 
 		<Style Selector="TextBlock">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="FontSize" Value="18"/>
-			<Setter Property="Margin" Value="10 0"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="Margin" Value="10 0" />
 		</Style>
 		<Style Selector="local|StorageCardControl">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="CornerRadius" Value="10"/>
-			<Setter Property="Width" Value="200"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="CornerRadius" Value="10" />
+			<Setter Property="Width" Value="200" />
 		</Style>
 		<Style Selector="Button">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Background" Value="Black"/>
-			<Setter Property="Foreground" Value="White"/>
-			<Setter Property="CornerRadius" Value="8"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="3"/>
-			<Setter Property="Margin" Value="10 0"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="CornerRadius" Value="8" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="3" />
+			<Setter Property="Margin" Value="10 0" />
 		</Style>
 
 		<Style Selector="Button.uc">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-			<Setter Property="Background" Value="Black"/>
-			<Setter Property="Foreground" Value="White"/>
-			<Setter Property="CornerRadius" Value="10"/>
-			<Setter Property="Margin" Value="10"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="3"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="CornerRadius" Value="10" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="3" />
 		</Style>
 	</Window.Styles>
 
 	<DockPanel>
-		<Label FontSize="22" FontWeight="Bold" DockPanel.Dock="Top" Margin="20" Content="Мероприятие"/>
-		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<StackPanel Orientation="Horizontal" Margin="10 0">
-				<TextBlock Text="Название:"/>
-				<TextBlock x:Name="eventTitleText" Text=""/>
+		<Label
+			Margin="20"
+			Content="Мероприятие"
+			DockPanel.Dock="Top"
+			FontSize="22"
+			FontWeight="Bold" />
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Top"
+			Orientation="Horizontal">
+			<StackPanel Margin="10,0" Orientation="Horizontal">
+				<TextBlock Text="Название:" />
+				<TextBlock x:Name="eventTitleText" Text="" />
 			</StackPanel>
-			<StackPanel Orientation="Horizontal" Margin="10 0">
-				<TextBlock Text="Дата начала:"/>
-				<TextBlock x:Name="beginDateText" Text=""/>
+			<StackPanel Margin="10,0" Orientation="Horizontal">
+				<TextBlock Text="Дата начала:" />
+				<TextBlock x:Name="beginDateText" Text="" />
 			</StackPanel>
-			<StackPanel Orientation="Horizontal" Margin="10 0">
-				<TextBlock Text="Дата конца:"/>
-				<TextBlock x:Name="endDateText" Text=""/>
+			<StackPanel Margin="10,0" Orientation="Horizontal">
+				<TextBlock Text="Дата конца:" />
+				<TextBlock x:Name="endDateText" Text="" />
 			</StackPanel>
 		</StackPanel>
-		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Top" Margin="25 0">
-			<TextBlock Text="Описание услуги:"/>
-			<TextBlock x:Name="eventServiceTitleText" Text="" TextWrapping="Wrap"/>
+		<StackPanel
+			Margin="25,0"
+			DockPanel.Dock="Top"
+			Orientation="Horizontal">
+			<TextBlock Text="Описание услуги:" />
+			<TextBlock
+				x:Name="eventServiceTitleText"
+				Text=""
+				TextWrapping="Wrap" />
 		</StackPanel>
-		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<Button Content="Создать склад" Click="AddButton_Click"/>
-			<Button Content="Назад" Click="BackButton_Click"/>
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Top"
+			Orientation="Horizontal">
+			<Button Click="AddButton_Click" Content="Создать склад" />
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
-		<Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top" Content="Склады"/>
+		<Label
+			HorizontalAlignment="Center"
+			Content="Склады"
+			DockPanel.Dock="Top"
+			FontSize="20" />
 		<ScrollViewer>
-			<WrapPanel DockPanel.Dock="Top" Margin="20">
-				<Button Classes="uc" Click="CardButton_Click">
-					<local:StorageCardControl/>
-				</Button>
-				<Button Classes="uc" Click="CardButton_Click">
-					<local:StorageCardControl/>
-				</Button>
-				<Button Classes="uc" Click="CardButton_Click">
-					<local:StorageCardControl/>
-				</Button>
-				<Button Classes="uc" Click="CardButton_Click">
-					<local:StorageCardControl/>
-				</Button>
-			</WrapPanel>
+
+
+
+
+			<WrapPanel
+				x:Name="EventsWrapPanel"
+				Margin="20"
+				DockPanel.Dock="Top" />
+
+
 		</ScrollViewer>
 	</DockPanel>
 </Window>
