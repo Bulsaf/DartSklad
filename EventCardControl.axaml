@@ -7,6 +7,7 @@
 	d:DesignHeight="200"
 	d:DesignWidth="300"
 	Background="Black"
+	Foreground="LightGray"
 	mc:Ignorable="d">
 	<UserControl.Styles>
 		<Style Selector="TextBlock">
@@ -19,7 +20,6 @@
 		<TextBlock
 			Margin="10"
 			FontSize="16"
-			Foreground="White"
 			Text="Название"
 			TextWrapping="Wrap" />
 		<StackPanel Orientation="Horizontal">

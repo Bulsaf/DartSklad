@@ -4,25 +4,17 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	Width="220"
+	Width="250"
 	d:DesignHeight="150"
-	d:DesignWidth="220"
+	d:DesignWidth="250"
 	Background="Black"
+	Foreground="LightGray"
 	mc:Ignorable="d">
-	<UserControl.Styles>
-		<Style Selector="Button.uc">
-			<Setter Property="VerticalAlignment" Value="Center" />
-			<Setter Property="HorizontalAlignment" Value="Center" />
-			<Setter Property="Background" Value="Black" />
-			<Setter Property="Foreground" Value="White" />
-			<Setter Property="CornerRadius" Value="10" />
-		</Style>
-	</UserControl.Styles>
+	
 	<StackPanel Orientation="Vertical">
 		<TextBlock
 			Margin="10"
 			FontSize="16"
-			Foreground="White"
 			Text="{Binding Title}"
 			TextWrapping="Wrap" />
 		<TextBlock

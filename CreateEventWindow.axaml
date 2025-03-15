@@ -6,7 +6,8 @@
         x:Class="DartSklad.CreateEventWindow"
         Title="CreateEventWindow"
 		Background="#181818"
-		Foreground="White">
+		Foreground="LightGray"
+		WindowStartupLocation="CenterScreen">
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="300"/>
@@ -16,20 +17,20 @@
 		</Style>
 
 		<Style Selector="DatePicker">
-			<Setter Property="Width" Value="300"/>
-			<Setter Property="Height" Value="50"/>
-			<Setter Property="Margin" Value="5"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Width" Value="300" />
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
 		</Style>
 
-		<Style Selector="TextBlock">
-			<Setter Property="FontSize" Value="18"/>
-			<Setter Property="Margin" Value="15"/>
+		<Style Selector="TextBlock.tb">
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="Margin" Value="15" />
 		</Style>
+	
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center"/>
 			<Setter Property="Background" Value="Black"/>
-			<Setter Property="Foreground" Value="White"/>
 			<Setter Property="CornerRadius" Value="8"/>
 			<Setter Property="BorderBrush" Value="Red"/>
 			<Setter Property="BorderThickness" Value="3"/>
@@ -46,11 +47,11 @@
 				<ColumnDefinition Width="0.5*"/>
 			</Grid.ColumnDefinitions>
 			<StackPanel Grid.Column="0" Margin="10" DockPanel.Dock="Top">
-				<TextBlock Text="Название"/>
-				<TextBlock Text="Описание услуги"/>
-				<TextBlock Text="Дата въезда"/>
-				<TextBlock Text="Дата начала"/>
-				<TextBlock Text="Дата конца"/>
+				<TextBlock Classes ="tb" Text="Название"/>
+				<TextBlock Classes ="tb" Text="Описание услуги"/>
+				<TextBlock Classes ="tb" Text="Дата въезда"/>
+				<TextBlock Classes ="tb" Text="Дата начала"/>
+				<TextBlock Classes ="tb" Text="Дата конца"/>
 			</StackPanel>
 			<StackPanel Grid.Column="1" Margin="10" DockPanel.Dock="Top">
 				<TextBox/>

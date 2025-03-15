@@ -9,8 +9,9 @@
 	d:DesignHeight="450"
 	d:DesignWidth="800"
 	Background="#181818"
-	Foreground="White"
-	mc:Ignorable="d">
+	Foreground="LightGray"
+	mc:Ignorable="d"
+	WindowStartupLocation="CenterScreen">
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="300" />
@@ -33,7 +34,6 @@
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center" />
 			<Setter Property="Background" Value="Black" />
-			<Setter Property="Foreground" Value="White" />
 			<Setter Property="CornerRadius" Value="8" />
 			<Setter Property="BorderBrush" Value="Red" />
 			<Setter Property="BorderThickness" Value="3" />
@@ -44,7 +44,6 @@
 			<Setter Property="VerticalAlignment" Value="Center" />
 			<Setter Property="HorizontalAlignment" Value="Center" />
 			<Setter Property="Background" Value="Black" />
-			<Setter Property="Foreground" Value="White" />
 			<Setter Property="CornerRadius" Value="10" />
 			<Setter Property="Margin" Value="10" />
 			<Setter Property="BorderBrush" Value="Red" />

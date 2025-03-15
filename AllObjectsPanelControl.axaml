@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
              x:Class="DartSklad.AllObjectsPanelControl"
-			 Background="Black">
+			 Background="Black"
+			 Foreground="LightGray">
 	<UserControl.Styles>
 		<Style Selector="TextBlock">
 			<Setter Property="Margin" Value="10 5"/>
@@ -13,7 +14,7 @@
 		</Style>
 	</UserControl.Styles>
 	<StackPanel Orientation="Vertical">
-		<TextBlock Margin="10" FontSize="16" Foreground="White" Text="Название" TextWrapping="Wrap"/>
+		<TextBlock Margin="10" FontSize="16" Text="Название" TextWrapping="Wrap"/>
 		<StackPanel Orientation="Horizontal">
 			<TextBlock Foreground="LightGray" Text="ID:" TextWrapping="Wrap"/>
 			<TextBlock Foreground="LightGray" Text="DS" TextWrapping="Wrap"/>

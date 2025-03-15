@@ -7,7 +7,8 @@
         Title="StorageObjectsWindow"
 		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
 		Background="#181818"
-		Foreground="White">
+		Foreground="LightGray"
+		WindowStartupLocation="CenterScreen">
 	<Window.Styles>
 		<Style Selector="TextBlock">
 			<Setter Property="VerticalAlignment" Value="Center"/>
@@ -25,7 +26,6 @@
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center"/>
 			<Setter Property="Background" Value="Black"/>
-			<Setter Property="Foreground" Value="White"/>
 			<Setter Property="CornerRadius" Value="8"/>
 			<Setter Property="BorderBrush" Value="Red"/>
 			<Setter Property="BorderThickness" Value="3"/>
