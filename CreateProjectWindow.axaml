@@ -9,8 +9,8 @@
 	d:DesignWidth="800"
 	Background="#181818"
 	Foreground="LightGray"
-	mc:Ignorable="d"
-	WindowStartupLocation="CenterScreen">
+	WindowStartupLocation="CenterScreen"
+	mc:Ignorable="d">
 	<Window.Styles>
 		<Style Selector="TextBox">
 			<Setter Property="Width" Value="300" />
@@ -77,7 +77,7 @@
 			DockPanel.Dock="Bottom"
 			Orientation="Horizontal">
 			<Button Click="AddButton_Click" Content="Добавить" />
-			<Button Click="BackButton_Click" Content="Назад" />
+			<!-- <Button Click="BackButton_Click" Content="Назад" /> -->
 		</StackPanel>
 	</DockPanel>
 </Window>
