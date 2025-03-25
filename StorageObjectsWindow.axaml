@@ -1,57 +1,74 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="DartSklad.StorageObjectsWindow"
-        Title="StorageObjectsWindow"
-		xmlns:local ="clr-namespace:DartSklad;assembly=DartSklad"
-		Background="#181818"
-		Foreground="LightGray"
-		WindowStartupLocation="CenterScreen">
+<Window
+	x:Class="DartSklad.StorageObjectsWindow"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:DartSklad;assembly=DartSklad"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="StorageObjectsWindow"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	Background="#181818"
+	Foreground="White"
+	mc:Ignorable="d">
 	<Window.Styles>
 		<Style Selector="TextBlock">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="FontSize" Value="18"/>
-			<Setter Property="Margin" Value="10 0"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="Margin" Value="10 0" />
 		</Style>
 		<Style Selector="local|AllObjectsPanelControl">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Margin" Value="10"/>
-			<Setter Property="CornerRadius" Value="10"/>
-			<Setter Property="Width" Value="250"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="2"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="CornerRadius" Value="10" />
+			<Setter Property="Width" Value="250" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="2" />
 		</Style>
 		<Style Selector="Button">
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Background" Value="Black"/>
-			<Setter Property="CornerRadius" Value="8"/>
-			<Setter Property="BorderBrush" Value="Red"/>
-			<Setter Property="BorderThickness" Value="3"/>
-			<Setter Property="Margin" Value="10 0"/>
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="CornerRadius" Value="8" />
+			<Setter Property="BorderBrush" Value="Red" />
+			<Setter Property="BorderThickness" Value="3" />
+			<Setter Property="Margin" Value="10 0" />
 		</Style>
 	</Window.Styles>
 	<DockPanel>
-		<Label FontSize="22" FontWeight="Bold" DockPanel.Dock="Top" Margin="20" Content="Склад"/>
-		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<StackPanel Orientation="Horizontal" Margin="10 0">
-				<TextBlock Text="Название:"/>
-				<TextBlock x:Name="storageTitleText" Text=""/>
+		<Label
+			Margin="20"
+			Content="Склад"
+			DockPanel.Dock="Top"
+			FontSize="22"
+			FontWeight="Bold" />
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Top"
+			Orientation="Horizontal">
+			<StackPanel Margin="10,0" Orientation="Horizontal">
+				<TextBlock Text="Название:" />
+				<TextBlock x:Name="StorageTitleText" Text="{Binding StorageTitle}" />
 			</StackPanel>
 		</StackPanel>
-		<StackPanel Orientation="Horizontal" Margin="15" DockPanel.Dock="Top">
-			<Button Content="Добавить объект" Click="AddButton_Click"/>
-			<Button Content="Назад" Click="BackButton_Click"/>
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Top"
+			Orientation="Horizontal">
+			<Button Click="AddButton_Click" Content="Добавить объект" />
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
-		<Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top" Content="Объекты"/>
+		<Label
+			HorizontalAlignment="Center"
+			Content="Объекты"
+			DockPanel.Dock="Top"
+			FontSize="20" />
 		<ScrollViewer>
-			<WrapPanel DockPanel.Dock="Top" Margin="20">
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
-				<local:AllObjectsPanelControl/>
+			<WrapPanel
+				x:Name="ObjectsWrapPanel"
+				Margin="20"
+				DockPanel.Dock="Top">
+				<!--  Объекты будут добавляться динамически  -->
 			</WrapPanel>
 		</ScrollViewer>
 	</DockPanel>

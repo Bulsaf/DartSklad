@@ -15,54 +15,52 @@ public partial class EventInfoWindow : Window
 
     public EventInfoWindow(Guid parentId, Guid eventId)
     {
+
+        Console.WriteLine(eventId);
         this.eventId = eventId;
         this.parentId = parentId;
 
         InitializeComponent();
 
+        var storagesList = GetStoragesByEventId(eventId);
 
-
-            var subjectslist = GetAll();
-
-            foreach (var sub in subjectslist)
+        foreach (var storage in storagesList)
+        {
+            var button = new Button
             {
-                var button = new Button
+                Classes = { "uc" },
+                Content = new ProjectsPanelControl
                 {
-                    Classes = { "uc" },
-                    Content = new ProjectsPanelControl
-                    {
-                        DataContext = sub
-                    },
-                    Tag = sub 
-                };
+                    DataContext = storage
+                },
+                Tag = storage
+            };
 
-                button.Click += CardButton_Click; 
-                EventsWrapPanel.Children.Add(button); 
-            }
-
-
-
+            button.Click += CardButton_Click;
+            EventsWrapPanel.Children.Add(button);
+        }
     }
 
+    private List<Storage> GetStoragesByEventId(Guid eventId)
+    {
+        using (var context = new TrpoContext())
+        {
+            // Выполняем запрос к базе данных, чтобы получить только склады, привязанные к этому событию
+            var storages = context.Storages
+                .Where(s => s.EventId == eventId)
+                .ToList();
 
-            private List<Subject> GetAll()
-            {
-                using (var context = new TrpoContext())
-                {
-                // Выполняем запрос к базе данных
-                    var subj = context.Subjects.ToList();
-                    return subj;
-                }
-            }
-
+            return storages;
+        }
+    }
 
     private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var addWindow = new CreateStorageWindow();
+        var addWindow = new CreateStorageWindow(eventId, eventId); // Передаем parentId и eventId
         addWindow.Show();
         this.Close();
     }
-    
+
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         var projWindow = new ProjectInfoWindow(parentId);
@@ -72,8 +70,11 @@ public partial class EventInfoWindow : Window
 
     private void CardButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var projWindow = new StorageObjectsWindow();
-        projWindow.Show();
-        this.Close();
+        if (sender is Button button && button.Tag is Storage storage)
+        {
+            var storageObjectsWindow = new StorageObjectsWindow(storage.Id); // Передаем Id склада
+            storageObjectsWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -81,7 +81,7 @@ public partial class TrpoContext : DbContext
 
             entity.ToTable("storages");
 
-            entity.HasIndex(e => e.Title, "storages_title_key").IsUnique();
+            entity.HasIndex(e => e.Title, "storages_title_key");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()

@@ -17,6 +17,9 @@ public partial class ProjectInfoWindow : Window
     public ProjectInfoWindow(Guid id)
     {
 
+
+        Console.WriteLine(id);
+
         projectId = id;
         InitializeComponent();
 
@@ -51,6 +54,8 @@ public List<Event> GetEventsByProjectId(Guid projectId)
             .Include(p => p.Events) // Подгружаем связанные события
             .FirstOrDefault(p => p.Id == projectId);
 
+        Console.WriteLine(project.Events.Count);
+
         // Если проект найден, возвращаем его события
         return project?.Events.ToList() ?? new List<Event>();
     }
@@ -74,8 +79,11 @@ public List<Event> GetEventsByProjectId(Guid projectId)
 
     private void CardButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var createProjectWindow = new EventInfoWindow(projectId, projectId);
+                if (sender is Button button && button.Tag is Event eve)
+            {
+        var createProjectWindow = new EventInfoWindow(eve.Id, eve.Id);
         createProjectWindow.Show();
         this.Close();
+    }
     }
 }

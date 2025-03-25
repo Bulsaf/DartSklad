@@ -1,35 +1,66 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
-             x:Class="DartSklad.AllObjectsPanelControl"
-			 Background="Black"
-			 Foreground="LightGray">
+<UserControl
+	x:Class="DartSklad.AllObjectsPanelControl"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	d:DesignHeight="200"
+	d:DesignWidth="300"
+	Background="Black"
+	Foreground="LightGray"
+	mc:Ignorable="d">
 	<UserControl.Styles>
 		<Style Selector="TextBlock">
-			<Setter Property="Margin" Value="10 5"/>
-			<Setter Property="FontSize" Value="14"/>
-			<Setter Property="Foreground" Value="LightGray"/>
+			<Setter Property="Margin" Value="10 5" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Foreground" Value="LightGray" />
 		</Style>
 	</UserControl.Styles>
 	<StackPanel Orientation="Vertical">
-		<TextBlock Margin="10" FontSize="16" Text="Название" TextWrapping="Wrap"/>
+		<TextBlock
+			Margin="10"
+			FontSize="16"
+			Text="{Binding Title}"
+			TextWrapping="Wrap" />
 		<StackPanel Orientation="Horizontal">
-			<TextBlock Foreground="LightGray" Text="ID:" TextWrapping="Wrap"/>
-			<TextBlock Foreground="LightGray" Text="DS" TextWrapping="Wrap"/>
+			<TextBlock
+				Foreground="LightGray"
+				Text="ID:"
+				TextWrapping="Wrap" />
+			<TextBlock
+				Foreground="LightGray"
+				Text="{Binding Id}"
+				TextWrapping="Wrap" />
 		</StackPanel>
 		<StackPanel Orientation="Horizontal">
-			<TextBlock Foreground="LightGray" Text="Тип:" TextWrapping="Wrap"/>
-			<TextBlock Foreground="LightGray" Text="DS" TextWrapping="Wrap"/>
+			<TextBlock
+				Foreground="LightGray"
+				Text="Тип:"
+				TextWrapping="Wrap" />
+			<TextBlock
+				Foreground="LightGray"
+				Text="{Binding SubjectType.Title}"
+				TextWrapping="Wrap" />
 		</StackPanel>
 		<StackPanel Orientation="Horizontal">
-			<TextBlock Foreground="LightGray" Text="Серийный номер:" TextWrapping="Wrap"/>
-			<TextBlock Foreground="LightGray" Text="DS" TextWrapping="Wrap"/>
+			<TextBlock
+				Foreground="LightGray"
+				Text="Серийный номер:"
+				TextWrapping="Wrap" />
+			<TextBlock
+				Foreground="LightGray"
+				Text="{Binding SerialNumber}"
+				TextWrapping="Wrap" />
 		</StackPanel>
 		<StackPanel Orientation="Horizontal">
-			<TextBlock Foreground="LightGray" Text="Цена:" TextWrapping="Wrap"/>
-			<TextBlock Foreground="LightGray" Text="DS" TextWrapping="Wrap"/>
+			<TextBlock
+				Foreground="LightGray"
+				Text="Цена:"
+				TextWrapping="Wrap" />
+			<TextBlock
+				Foreground="LightGray"
+				Text="{Binding Price}"
+				TextWrapping="Wrap" />
 		</StackPanel>
 	</StackPanel>
 </UserControl>
