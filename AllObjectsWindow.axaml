@@ -55,7 +55,7 @@
 			DockPanel.Dock="Top"
 			Orientation="Horizontal">
 			<Button Click="CreateObjectButton_Click" Content="Создать объект" />
-			<!-- <Button Click="BackButton_Click" Content="Назад" /> -->
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
 		<ScrollViewer>
 			<WrapPanel

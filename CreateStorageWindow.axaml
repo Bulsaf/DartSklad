@@ -72,7 +72,7 @@
 			DockPanel.Dock="Bottom"
 			Orientation="Horizontal">
 			<Button Click="AddButton_Click" Content="Добавить" />
-			<!-- <Button Click="BackButton_Click" Content="Назад" /> -->
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
 	</DockPanel>
 </Window>

@@ -5,6 +5,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using DartSklad.Models;
+// using DartSklad.MainWindow;
 
 namespace DartSklad;
 
@@ -90,6 +91,6 @@ public partial class AddObjectToStorageWindow : Window
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        this.Close();
+        
     }
 }

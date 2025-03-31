@@ -41,7 +41,7 @@
 			DockPanel.Dock="Top"
 			Orientation="Horizontal">
 			<Button Click="AddButton_Click" Content="Добавить выбранные" />
-			<!-- <Button Click="BackButton_Click" Content="Назад" /> -->
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
 
 		<ScrollViewer x:Name="MainScrollViewer">

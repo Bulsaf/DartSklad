@@ -58,7 +58,9 @@ private List<Subject> GetObjectsByStorageId(Guid storageId)
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        this.Close();
+        // var mainWindow = new MainWindow();
+        // mainWindow.Show();
+        // this.Close();
     }
 
     private void ObjectButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -68,7 +70,7 @@ private List<Subject> GetObjectsByStorageId(Guid storageId)
             // Здесь можно открыть окно для просмотра или редактирования объекта
             // var objectDetailsWindow = new ObjectDetailsWindow(storageObject.Id);
             // objectDetailsWindow.Show();
-            this.Close();
+            // this.Close();
         }
     }
 }

@@ -80,7 +80,7 @@
 			DockPanel.Dock="Top"
 			Orientation="Horizontal">
 			<Button Click="AddButton_Click" Content="Создать мероприятие" />
-			<!-- <Button Click="BackButton_Click" Content="Назад" /> -->
+			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
 		<Label
 			HorizontalAlignment="Center"
