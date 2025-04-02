@@ -16,4 +16,16 @@ public partial class MessageWindow : Window
         InitializeComponent();
         textblock.Text = text;
     }
+
+    public MessageWindow(string title, string message)
+    {
+        InitializeComponent();
+        this.Title = title;
+        textblock.Text = message;
+    }
+
+    private void OkButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        this.Close();
+    }
 }

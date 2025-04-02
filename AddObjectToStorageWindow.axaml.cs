@@ -85,12 +85,16 @@ public partial class AddObjectToStorageWindow : Window
             context.SaveChanges();
         }
 
-        // Закрываем окно после добавления
+        // Открываем окно склада после добавления
+        var storageObjectsWindow = new StorageObjectsWindow(storageId);
+        storageObjectsWindow.Show();
         this.Close();
     }
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        
+        var storageObjectsWindow = new StorageObjectsWindow(storageId);
+        storageObjectsWindow.Show();
+        this.Close();
     }
 }

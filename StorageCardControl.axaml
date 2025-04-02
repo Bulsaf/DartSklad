@@ -7,7 +7,7 @@
 			 Background="Black"
 			 Foreground="LightGray">
 	<StackPanel Orientation="Vertical">
-		<TextBlock Margin="10" FontSize="16" Text="Название" TextWrapping="Wrap"/>
-		<TextBlock Margin="10 30" FontSize="14" Text="uashdbsajb121b3" TextWrapping="Wrap"/>
+		<TextBlock Margin="10" FontSize="16" Text="{Binding Title}" TextWrapping="Wrap"/>
+		<TextBlock Margin="10 30" FontSize="14" Text="{Binding Id}" TextWrapping="Wrap"/>
 	</StackPanel>
 </UserControl>

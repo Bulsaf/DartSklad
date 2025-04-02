@@ -2,11 +2,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" Width="200" Height="150" d:DesignWidth="200" d:DesignHeight="150"
+        mc:Ignorable="d" Width="350" Height="200" d:DesignWidth="350" d:DesignHeight="200"
         x:Class="DartSklad.MessageWindow"
-        Title="MessageWindow"
-		Background="#181818"
-		Foreground="LightGray"
-		WindowStartupLocation="CenterScreen">
-  <TextBlock x:Name="textblock" HorizontalAlignment="Center" TextAlignment="Start" VerticalAlignment="Center" TextWrapping="Wrap" Text=""/>
+        Title="Сообщение"
+        Background="#181818"
+        Foreground="LightGray"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel Margin="20">
+        <Button Name="OkButton" 
+                Click="OkButton_Click"
+                Content="OK" 
+                HorizontalAlignment="Center" 
+                DockPanel.Dock="Bottom"
+                Width="120"
+                Height="40"
+                Margin="0,15,0,0"
+                Background="Black"
+                Foreground="White"
+                BorderBrush="Red"
+                BorderThickness="2"
+                CornerRadius="8"
+                FontSize="16"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"/>
+        <TextBlock x:Name="textblock" 
+                   HorizontalAlignment="Center" 
+                   TextAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   TextWrapping="Wrap" 
+                   Text=""
+                   FontSize="16"/>
+    </DockPanel>
 </Window>

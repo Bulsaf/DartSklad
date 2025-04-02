@@ -4,82 +4,96 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	Title="CreateEventWindow"
-	d:DesignHeight="450"
-	d:DesignWidth="800"
+	Title="Создание мероприятия"
+	Width="600"
+	Height="480"
+	d:DesignHeight="480"
+	d:DesignWidth="600"
 	Background="#181818"
 	Foreground="LightGray"
 	WindowStartupLocation="CenterScreen"
 	mc:Ignorable="d">
 	<Window.Styles>
 		<Style Selector="TextBox">
-			<Setter Property="Width" Value="300" />
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Margin" Value="10" />
+			<Setter Property="Width" Value="360" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Height" Value="35" />
+			<Setter Property="Margin" Value="0,5,0,10" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="Padding" Value="10,0" />
+			<Setter Property="Background" Value="#222222" />
+			<Setter Property="Foreground" Value="White" />
 		</Style>
 
 		<Style Selector="DatePicker">
-			<Setter Property="Width" Value="300" />
-			<Setter Property="Height" Value="50" />
-			<Setter Property="Margin" Value="5" />
-			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="Width" Value="360" />
+			<Setter Property="Height" Value="35" />
+			<Setter Property="Margin" Value="0,5,0,10" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Background" Value="#222222" />
+			<Setter Property="Foreground" Value="White" />
 		</Style>
 
-		<Style Selector="TextBlock.tb">
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="Margin" Value="15" />
+		<Style Selector="TextBlock">
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="Margin" Value="0,0,0,5" />
+			<Setter Property="Foreground" Value="LightGray" />
 		</Style>
 
 		<Style Selector="Button">
-			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Width" Value="140" />
+			<Setter Property="Height" Value="40" />
+			<Setter Property="Margin" Value="8" />
 			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
 			<Setter Property="CornerRadius" Value="8" />
 			<Setter Property="BorderBrush" Value="Red" />
-			<Setter Property="BorderThickness" Value="3" />
-			<Setter Property="Margin" Value="10 0" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
 		</Style>
-
 	</Window.Styles>
 
-	<DockPanel>
-		<TextBlock
-			DockPanel.Dock="Top"
-			FontSize="18"
-			Text="Создание меропприятия" />
-		<Grid DockPanel.Dock="Top">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.5*" />
-				<ColumnDefinition Width="0.5*" />
-			</Grid.ColumnDefinitions>
-			<StackPanel
-				Grid.Column="0"
-				Margin="10"
-				DockPanel.Dock="Top">
-				<TextBlock Classes="tb" Text="Название" />
-				<TextBlock Classes="tb" Text="Описание услуги" />
-				<TextBlock Classes="tb" Text="Дата въезда" />
-				<TextBlock Classes="tb" Text="Дата начала" />
-				<TextBlock Classes="tb" Text="Дата конца" />
-			</StackPanel>
-			<StackPanel
-				Grid.Column="1"
-				Margin="10"
-				DockPanel.Dock="Top">
+	<Grid RowDefinitions="Auto,*,Auto" Margin="30">
+		<!-- Заголовок -->
+		<TextBlock 
+			Grid.Row="0"
+			Text="Создание мероприятия" 
+			FontSize="24" 
+			FontWeight="Bold" 
+			Margin="0,0,0,20"
+			HorizontalAlignment="Center"/>
+
+		<!-- Основное содержимое -->
+		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+			<StackPanel HorizontalAlignment="Center">
+				<TextBlock Text="Название мероприятия" />
 				<TextBox Name="Title" />
-				<TextBox Name="Description" />
+				
+				<TextBlock Text="Описание услуги" />
+				<TextBox Name="Description" Height="60" TextWrapping="Wrap" AcceptsReturn="True" />
+				
+				<TextBlock Text="Дата въезда" />
 				<DatePicker Name="EnterDate" />
+				
+				<TextBlock Text="Дата начала" />
 				<DatePicker Name="StartDate" />
+				
+				<TextBlock Text="Дата окончания" />
 				<DatePicker Name="EndDate" />
 			</StackPanel>
-		</Grid>
+		</ScrollViewer>
 
-		<StackPanel
-			Margin="10"
-			DockPanel.Dock="Bottom"
-			Orientation="Horizontal">
+		<!-- Кнопки -->
+		<StackPanel 
+			Grid.Row="2" 
+			Orientation="Horizontal" 
+			HorizontalAlignment="Center"
+			VerticalAlignment="Bottom"
+			Margin="0,15,0,0">
 			<Button Click="AddButton_Click" Content="Добавить" />
 			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
-	</DockPanel>
+	</Grid>
 </Window>

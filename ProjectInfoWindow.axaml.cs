@@ -16,31 +16,57 @@ public partial class ProjectInfoWindow : Window
     
     public ProjectInfoWindow(Guid id)
     {
-
-
         Console.WriteLine(id);
 
         projectId = id;
         InitializeComponent();
 
-
+        try
+        {
             var events = GetEventsByProjectId(id);
 
-            foreach (var ev in events)
+            if (events.Count > 0)
             {
-                var button = new Button
+                foreach (var ev in events)
                 {
-                    Classes = { "uc" },
-                    Content = new EventCardControl
+                    var button = new Button
                     {
-                        DataContext = ev
-                    },
-                    Tag = ev 
-                };
+                        Classes = { "uc" },
+                        Content = new EventCardControl
+                        {
+                            DataContext = ev
+                        },
+                        Tag = ev 
+                    };
 
-                button.Click += CardButton_Click; 
-                EventsWrapPanel.Children.Add(button); 
+                    button.Click += CardButton_Click; 
+                    EventsWrapPanel.Children.Add(button);
+                }
             }
+            else
+            {
+                // Добавляем сообщение, если нет мероприятий
+                var noEventsLabel = new TextBlock
+                {
+                    Text = "Нет мероприятий",
+                    FontSize = 16,
+                    Margin = new Thickness(10)
+                };
+                EventsWrapPanel.Children.Add(noEventsLabel);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка при загрузке мероприятий: {ex.Message}");
+            // Добавляем сообщение об ошибке
+            var errorLabel = new TextBlock
+            {
+                Text = "Ошибка при загрузке мероприятий",
+                FontSize = 16,
+                Margin = new Thickness(10)
+            };
+            EventsWrapPanel.Children.Add(errorLabel);
+        }
     }
     
 
@@ -54,10 +80,15 @@ public List<Event> GetEventsByProjectId(Guid projectId)
             .Include(p => p.Events) // Подгружаем связанные события
             .FirstOrDefault(p => p.Id == projectId);
 
-        Console.WriteLine(project.Events.Count);
-
-        // Если проект найден, возвращаем его события
-        return project?.Events.ToList() ?? new List<Event>();
+        // Проверяем, что проект найден перед обращением к его свойствам
+        if (project != null)
+        {
+            Console.WriteLine(project.Events.Count);
+            return project.Events.ToList();
+        }
+        
+        // Если проект не найден, возвращаем пустой список
+        return new List<Event>();
     }
 }
 
@@ -79,11 +110,11 @@ public List<Event> GetEventsByProjectId(Guid projectId)
 
     private void CardButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-                if (sender is Button button && button.Tag is Event eve)
-            {
-        var createProjectWindow = new EventInfoWindow(eve.Id, eve.Id);
-        createProjectWindow.Show();
-        this.Close();
-    }
+        if (sender is Button button && button.Tag is Event eve)
+        {
+            var eventInfoWindow = new EventInfoWindow(projectId, eve.Id);
+            eventInfoWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -9,49 +9,82 @@ namespace DartSklad;
 public partial class CreateStorageWindow : Window
 {
     private Guid eventId;
+    private Guid parentId;
 
     public CreateStorageWindow(Guid parentId, Guid eventId)
     {
         Console.WriteLine("Которое в создавалку пришло:");
         Console.WriteLine(eventId);
         this.eventId = eventId;
+        this.parentId = parentId;
         
         InitializeComponent();
     }
     private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        string storageName = Title.Text?? "";
-
-        var newStorage = new Storage
+        try
         {
+            string storageName = Title.Text?? "";
+            
+            // Проверка на пустое название склада
+            if (string.IsNullOrWhiteSpace(storageName))
+            {
+                var messageWindow = new MessageWindow("Ошибка", "Название склада не может быть пустым");
+                messageWindow.Show();
+                return;
+            }
 
-            Title = storageName,
-            EventId = eventId,
-        };
+            var newStorage = new Storage
+            {
+                Title = storageName,
+                EventId = eventId,
+            };
 
-        // Сохраняем склад в базу данных
-        SaveStorage(newStorage);
-
-      
+            // Сохраняем склад в базу данных
+            SaveStorage(newStorage);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка при создании склада: {ex.Message}");
+            var messageWindow = new MessageWindow("Ошибка", $"Не удалось создать склад: {ex.Message}");
+            messageWindow.Show();
+        }
     }
 
     private void SaveStorage(Storage newStorage)
     {
-        using (var context = new TrpoContext())
+        try
         {
-            context.Storages.Add(newStorage);
-            context.SaveChanges();
-        }
+            using (var context = new TrpoContext())
+            {
+                context.Storages.Add(newStorage);
+                context.SaveChanges();
+            }
 
-        var eventWindow = new EventInfoWindow(eventId, newStorage.Id);
-        eventWindow.Show();
-        this.Close();
+            var eventWindow = new EventInfoWindow(parentId, eventId);
+            eventWindow.Show();
+            this.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка при сохранении склада: {ex.Message}");
+            throw; // Пробрасываем исключение выше для обработки в AddButton_Click
+        }
     }
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var eventWindow = new MainWindow();
-        eventWindow.Show();
-        this.Close();
+        try
+        {
+            var eventWindow = new EventInfoWindow(parentId, eventId);
+            eventWindow.Show();
+            this.Close();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка при возврате к мероприятию: {ex.Message}");
+            var messageWindow = new MessageWindow("Ошибка", $"Не удалось вернуться к мероприятию: {ex.Message}");
+            messageWindow.Show();
+        }
     }
 }

@@ -14,16 +14,21 @@
 	mc:Ignorable="d">
 	<Window.Styles>
 		<Style Selector="TextBox">
-			<Setter Property="Width" Value="300" />
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Margin" Value="10 0" />
+			<Setter Property="Width" Value="250" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Height" Value="35" />
+			<Setter Property="Margin" Value="0,5,0,10" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="Padding" Value="10,0" />
+			<Setter Property="Background" Value="#222222" />
+			<Setter Property="Foreground" Value="White" />
 		</Style>
 
 		<Style Selector="TextBlock">
 			<Setter Property="VerticalAlignment" Value="Center" />
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="Margin" Value="10 0" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Margin" Value="5" />
+			<Setter Property="Foreground" Value="LightGray" />
 		</Style>
 		<Style Selector="local|EventCardControl">
 			<Setter Property="VerticalAlignment" Value="Center" />
@@ -34,20 +39,25 @@
 		<Style Selector="Button">
 			<Setter Property="VerticalAlignment" Value="Center" />
 			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
 			<Setter Property="CornerRadius" Value="8" />
 			<Setter Property="BorderBrush" Value="Red" />
-			<Setter Property="BorderThickness" Value="3" />
-			<Setter Property="Margin" Value="10 0" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="Margin" Value="8" />
+			<Setter Property="Padding" Value="15,8" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
 		</Style>
 
 		<Style Selector="Button.uc">
 			<Setter Property="VerticalAlignment" Value="Center" />
 			<Setter Property="HorizontalAlignment" Value="Center" />
 			<Setter Property="Background" Value="Black" />
+			<Setter Property="Foreground" Value="White" />
 			<Setter Property="CornerRadius" Value="10" />
 			<Setter Property="Margin" Value="10" />
 			<Setter Property="BorderBrush" Value="Red" />
-			<Setter Property="BorderThickness" Value="3" />
+			<Setter Property="BorderThickness" Value="2" />
 		</Style>
 	</Window.Styles>
 
@@ -63,15 +73,12 @@
 			DockPanel.Dock="Top"
 			Orientation="Horizontal">
 			<StackPanel Margin="10,0" Orientation="Horizontal">
-				<TextBlock Text="Название:" />
 				<TextBlock x:Name="projTitleText" Text="" />
 			</StackPanel>
 			<StackPanel Margin="10,0" Orientation="Horizontal">
-				<TextBlock Text="Дата начала:" />
 				<TextBlock x:Name="beginDateText" Text="" />
 			</StackPanel>
 			<StackPanel Margin="10,0" Orientation="Horizontal">
-				<TextBlock Text="Дата конца:" />
 				<TextBlock x:Name="endDateText" Text="" />
 			</StackPanel>
 		</StackPanel>

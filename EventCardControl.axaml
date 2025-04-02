@@ -20,7 +20,7 @@
 		<TextBlock
 			Margin="10"
 			FontSize="16"
-			Text="Название"
+			Text="{Binding Title}"
 			TextWrapping="Wrap" />
 		<StackPanel Orientation="Horizontal">
 			<TextBlock Text="ID:" TextWrapping="Wrap" />

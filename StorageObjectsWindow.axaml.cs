@@ -58,9 +58,22 @@ private List<Subject> GetObjectsByStorageId(Guid storageId)
 
     private void BackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        // var mainWindow = new MainWindow();
-        // mainWindow.Show();
-        // this.Close();
+        using (var context = new TrpoContext())
+        {
+            var storage = context.Storages.FirstOrDefault(s => s.Id == storageId);
+            if (storage != null && storage.EventId.HasValue)
+            {
+                var eventWindow = new EventInfoWindow(storage.EventId.Value, storage.EventId.Value);
+                eventWindow.Show();
+                this.Close();
+                return;
+            }
+        }
+        
+        // Если по какой-то причине не смогли найти связанное мероприятие, вернемся на главное окно
+        var mainWindow = new MainWindow();
+        mainWindow.Show();
+        this.Close();
     }
 
     private void ObjectButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
