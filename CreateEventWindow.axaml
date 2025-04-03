@@ -7,6 +7,8 @@
 	Title="Создание мероприятия"
 	Width="600"
 	Height="480"
+	MinWidth="500"
+	MinHeight="450"
 	d:DesignHeight="480"
 	d:DesignWidth="600"
 	Background="#181818"
@@ -55,18 +57,25 @@
 		</Style>
 	</Window.Styles>
 
-	<Grid RowDefinitions="Auto,*,Auto" Margin="30">
-		<!-- Заголовок -->
-		<TextBlock 
-			Grid.Row="0"
-			Text="Создание мероприятия" 
-			FontSize="24" 
-			FontWeight="Bold" 
-			Margin="0,0,0,20"
-			HorizontalAlignment="Center"/>
-
-		<!-- Основное содержимое -->
-		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+	<DockPanel>
+		<Label
+			Margin="20"
+			Content="Создание мероприятия"
+			DockPanel.Dock="Top"
+			FontSize="24"
+			FontWeight="Bold"
+			HorizontalAlignment="Center" />
+			
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Bottom"
+			Orientation="Horizontal"
+			HorizontalAlignment="Center">
+			<Button Click="AddButton_Click" Content="Добавить" />
+			<Button Click="BackButton_Click" Content="Назад" />
+		</StackPanel>
+		
+		<ScrollViewer Margin="30,0" VerticalScrollBarVisibility="Auto">
 			<StackPanel HorizontalAlignment="Center">
 				<TextBlock Text="Название мероприятия" />
 				<TextBox Name="Title" />
@@ -84,16 +93,5 @@
 				<DatePicker Name="EndDate" />
 			</StackPanel>
 		</ScrollViewer>
-
-		<!-- Кнопки -->
-		<StackPanel 
-			Grid.Row="2" 
-			Orientation="Horizontal" 
-			HorizontalAlignment="Center"
-			VerticalAlignment="Bottom"
-			Margin="0,15,0,0">
-			<Button Click="AddButton_Click" Content="Добавить" />
-			<Button Click="BackButton_Click" Content="Назад" />
-		</StackPanel>
-	</Grid>
+	</DockPanel>
 </Window>

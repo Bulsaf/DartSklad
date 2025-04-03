@@ -7,6 +7,8 @@
 	Title="Создание проекта"
 	Width="600"
 	Height="400"
+	MinWidth="500"
+	MinHeight="380"
 	d:DesignHeight="400"
 	d:DesignWidth="600"
 	Background="#181818"
@@ -55,40 +57,38 @@
 		</Style>
 	</Window.Styles>
 
-	<Grid RowDefinitions="Auto,*,Auto" Margin="30">
-		<!-- Заголовок -->
-		<TextBlock 
-			Grid.Row="0"
-			Text="Создание проекта" 
-			FontSize="24" 
-			FontWeight="Bold" 
-			Margin="0,0,0,20"
-			HorizontalAlignment="Center"/>
-
-		<!-- Основное содержимое -->
-		<StackPanel Grid.Row="1" HorizontalAlignment="Center">
-			<TextBlock Text="Название проекта" />
-			<TextBox x:Name="ProjectNameTextBox" />
+	<DockPanel>
+		<Label
+			Margin="20"
+			Content="Создание проекта"
+			DockPanel.Dock="Top"
+			FontSize="24"
+			FontWeight="Bold"
+			HorizontalAlignment="Center" />
 			
-			<TextBlock Text="Дата въезда" />
-			<DatePicker x:Name="EntryDatePicker" />
-			
-			<TextBlock Text="Дата начала" />
-			<DatePicker x:Name="StartDatePicker" />
-			
-			<TextBlock Text="Дата окончания" />
-			<DatePicker x:Name="EndDatePicker" />
-		</StackPanel>
-
-		<!-- Кнопки -->
-		<StackPanel 
-			Grid.Row="2" 
-			Orientation="Horizontal" 
-			HorizontalAlignment="Center"
-			VerticalAlignment="Bottom"
-			Margin="0,15,0,0">
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Bottom"
+			Orientation="Horizontal"
+			HorizontalAlignment="Center">
 			<Button Click="AddButton_Click" Content="Добавить" />
 			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
-	</Grid>
+		
+		<ScrollViewer Margin="30,0">
+			<StackPanel HorizontalAlignment="Center">
+				<TextBlock Text="Название проекта" />
+				<TextBox x:Name="ProjectNameTextBox" />
+				
+				<TextBlock Text="Дата въезда" />
+				<DatePicker x:Name="EntryDatePicker" />
+				
+				<TextBlock Text="Дата начала" />
+				<DatePicker x:Name="StartDatePicker" />
+				
+				<TextBlock Text="Дата окончания" />
+				<DatePicker x:Name="EndDatePicker" />
+			</StackPanel>
+		</ScrollViewer>
+	</DockPanel>
 </Window>

@@ -7,6 +7,8 @@
 	Title="Создание склада"
 	Width="500"
 	Height="300"
+	MinWidth="420"
+	MinHeight="280"
 	d:DesignHeight="300"
 	d:DesignWidth="500"
 	Background="#181818"
@@ -46,33 +48,31 @@
 		</Style>
 	</Window.Styles>
 
-	<Grid RowDefinitions="Auto,*,Auto" Margin="30">
-		<!-- Заголовок -->
-		<TextBlock 
-			Grid.Row="0"
-			Text="Создание склада" 
-			FontSize="24" 
-			FontWeight="Bold" 
-			Margin="0,0,0,20"
-			HorizontalAlignment="Center"/>
-
-		<!-- Основное содержимое -->
-		<StackPanel Grid.Row="1" HorizontalAlignment="Center">
-			<TextBlock Text="Название склада" />
-			<TextBox Name="Title" />
-		</StackPanel>
-
-		<!-- Кнопки -->
-		<StackPanel 
-			Grid.Row="2" 
-			Orientation="Horizontal" 
-			HorizontalAlignment="Center"
-			VerticalAlignment="Bottom"
-			Margin="0,15,0,0">
+	<DockPanel>
+		<Label
+			Margin="20"
+			Content="Создание склада"
+			DockPanel.Dock="Top"
+			FontSize="24"
+			FontWeight="Bold"
+			HorizontalAlignment="Center" />
+			
+		<StackPanel
+			Margin="15"
+			DockPanel.Dock="Bottom"
+			Orientation="Horizontal"
+			HorizontalAlignment="Center">
 			<Button Click="AddButton_Click" Content="Добавить" />
 			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
-	</Grid>
+		
+		<ScrollViewer Margin="30,0">
+			<StackPanel HorizontalAlignment="Center">
+				<TextBlock Text="Название склада" />
+				<TextBox Name="Title" />
+			</StackPanel>
+		</ScrollViewer>
+	</DockPanel>
 </Window>
 
 

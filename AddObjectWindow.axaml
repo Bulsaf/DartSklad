@@ -5,9 +5,11 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="[local ]clr-namespace:DartSklad;assembly=DartSklad"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	Title="AddObjectWindow"
+	Title="Создание объекта"
 	Width="450"
 	Height="350"
+	MinWidth="420"
+	MinHeight="320"
 	d:DesignHeight="350"
 	d:DesignWidth="450"
 	Background="#181818"
@@ -43,6 +45,8 @@
 		</Style>
 		
 		<Style Selector="Button">
+			<Setter Property="Width" Value="140" />
+			<Setter Property="Height" Value="40" />
 			<Setter Property="VerticalAlignment" Value="Center" />
 			<Setter Property="Background" Value="Black" />
 			<Setter Property="Foreground" Value="White" />
@@ -52,49 +56,56 @@
 			<Setter Property="Margin" Value="8" />
 			<Setter Property="Padding" Value="15,8" />
 			<Setter Property="FontSize" Value="14" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
 		</Style>
 	</Window.Styles>
 
-
 	<DockPanel>
-		<TextBlock
+		<Label
+			Margin="20"
+			Content="Создание объекта"
 			DockPanel.Dock="Top"
-			FontSize="18"
-			Text="Создание объекта" />
-		<Grid DockPanel.Dock="Top">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.5*" />
-				<ColumnDefinition Width="0.5*" />
-			</Grid.ColumnDefinitions>
-			<StackPanel
-				Grid.Column="0"
-				Margin="10"
-				DockPanel.Dock="Top">
-				<TextBlock Text="Название" />
-				<TextBlock Text="Серийный номер" />
-				<TextBlock Text="Тип" />
-				<TextBlock Text="Цена" />
-			</StackPanel>
-			<StackPanel
-				Grid.Column="1"
-				Margin="10"
-				DockPanel.Dock="Top">
-				<TextBox Text="{Binding NewSubject.Title}" />
-				<TextBox Text="{Binding NewSubject.SerialNumber}" />
-				<ComboBox
-					DisplayMemberBinding="{Binding Title}"
-					ItemsSource="{Binding SubjectTypes}"
-					SelectedItem="{Binding SelectedSubjectType}" />
-				<TextBox Text="{Binding NewSubject.Price}" />
-			</StackPanel>
-		</Grid>
-
+			FontSize="24"
+			FontWeight="Bold"
+			HorizontalAlignment="Center" />
+			
 		<StackPanel
-			Margin="10"
+			Margin="15"
 			DockPanel.Dock="Bottom"
-			Orientation="Horizontal">
+			Orientation="Horizontal"
+			HorizontalAlignment="Center">
 			<Button Click="AddButton_Click" Content="Добавить" />
 			<Button Click="BackButton_Click" Content="Назад" />
 		</StackPanel>
+		
+		<ScrollViewer Margin="20,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.5*" />
+					<ColumnDefinition Width="0.5*" />
+				</Grid.ColumnDefinitions>
+				<StackPanel
+					Grid.Column="0"
+					Margin="10"
+					VerticalAlignment="Center">
+					<TextBlock Text="Название" />
+					<TextBlock Text="Серийный номер" />
+					<TextBlock Text="Тип" />
+					<TextBlock Text="Цена" />
+				</StackPanel>
+				<StackPanel
+					Grid.Column="1"
+					Margin="10"
+					VerticalAlignment="Center">
+					<TextBox Text="{Binding NewSubject.Title}" />
+					<TextBox Text="{Binding NewSubject.SerialNumber}" />
+					<ComboBox
+						DisplayMemberBinding="{Binding Title}"
+						ItemsSource="{Binding SubjectTypes}"
+						SelectedItem="{Binding SelectedSubjectType}" />
+					<TextBox Text="{Binding NewSubject.Price}" />
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
 	</DockPanel>
 </Window>
